@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link href="{% static 'main/css/reuslt.css' %}" rel="stylesheet">
+<style>
+    @font-face {
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+    font-family: "GmarketSansBold";
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  h3{
+    font-family: "GmarketSansBold";
+    
+
+
+  }
+  
+  
+  
+  h2{
+    font-family: "GmarketSansBold";
+    
+  }
+
+  li{
+    font-family: "GmarketSansBold";
+    color:#877669;
+  }
+
+  p4{
+    font-family: "GmarketSansBold";
+    
+  }
+
+</style>
+
+  
+{% endblock %}
+
+{% block content %}
+<div class="wrap">
+    <div class="container">
+        <div class="row align-items-center">
+            <h2 class="display-5" style="margin-bottom: 2rem; font-weight:bold; font-size:40px; font-family:'GmarketSansBold';">나의 취향에 맞는 롯데제과</h2>
+            <ul>
+                <li>추천되는 과자가 다양할 경우, 결과는 유동적입니다.</li>
+                <li>함께 먹고 싶은 과자, 누구와 함께, 어떤 상황에서 마시느냐에 따라 어울리는 제품도 바뀌니, 그때그때 이 퀴즈를 통해 다를 과자를 추천 받아보세요!</li>
+            </ul>
+        </div>
+        <section>
+            <div class="frame" style="overflow: hidden; margin-top:2rem">
+                <h3 style="display:inline; float:left; margin-bottom: 2rem; font-weight:bold;">누구와 먹는 과자인가요?</h3>
+                <hr align="right" style=" width: 65%;">
+            </div>
+            
+            <h2 style="color:#DA291C;font-weight:bold;font-size:4rem;">#{{with_who}}</h2>
+            <div class="items-container"
+                style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+                <div class="row" style="justify-content: flex-start;">
+                    {% for snack_result1 in snacks_result1 %} 
+                    <div class=items style="text-align: center; margin-right: 1rem; margin-top:1rem;">
+                        <img src="{{snack_result1.image}}" class="rounded float" alt="...">
+                        <br>
+                        <p4>{{snack_result1.name}}</p4>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="frame" style="overflow: hidden; margin-top:2rem">
+                <h3 style="display:inline; float:left; margin-bottom: 2rem; font-weight:bold;">내가 좋아하는 식감의 과자는?</h3>
+                <hr align="right" style=" width: 65%;">
+            </div>
+            <h2 style="color:#DA291C; font-weight:bold;font-size:4rem;">#{{texture}}</h2>
+            <div class="items-container"
+                style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+                <div class="row" style="justify-content: flex-start;">
+                    {% for snack_result2 in snacks_result2 %} 
+                    <div class=items style="text-align: center; margin-right: 1rem; margin-top:1rem;">
+                        <img src="{{snack_result2.image}}"
+                            class="rounded float" alt="...">
+                        <br>
+                        <p4>{{snack_result2.name}}</p4>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="frame" style="overflow: hidden; margin-top:2rem">
+                <h3 style="display:inline; float:left; margin-bottom: 2rem; font-weight:bold;">내가 즐겨먹는 맛은? </h3>
+                <hr align="right" style=" width: 65%;">
+            </div>
+            <h2 style="color:#DA291C;font-weight:bold;font-size:4rem;">#{{flavor}}</h2>
+            <div class="items-container"
+                style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+                <div class="row" style="justify-content: flex-start;">
+                    {% for snack_result3 in snacks_result3 %} 
+                    <div class=items style="text-align: center; margin-right: 1rem; margin-top:1rem;">
+                        <img src="{{snack_result3.image}}"
+                            class="rounded float" alt="...">
+                        <br>
+                        <p4>{{snack_result3.name}}</p4>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="frame" style="overflow: hidden; margin-top:2rem">
+                <h3 style="display:inline; float:left; margin-bottom: 2rem; font-weight:bold;">내가 선호하는 스타일은? </h3>
+                <hr align="right" style=" width: 65%;">
+            </div>
+            <h2 style="color:#DA291C;font-weight:bold;font-size:4rem;">#{{is_one_time}}</h2>
+            <div class="items-container"
+                style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+                <div class="row" style="justify-content: flex-start;">
+                    {% for snack_result4 in snacks_result4 %} 
+                    <div class=items style="text-align: center; margin-right: 1rem; margin-top:1rem;">
+                        <img src="{{snack_result4.image}}"
+                            class="rounded float" alt="...">
+                        <br>
+                        <p4>{{snack_result4.name}}</p4>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="frame" style="overflow: hidden; margin-top:2rem">
+                <h3 style="display:inline; float:left; margin-bottom: 2rem; font-weight:bold;">나의 상황에 맞는 과자는? </h3>
+                <hr align="right" style=" width: 65%;">
+            </div>
+            <h2 style="color:#DA291C;font-weight:bold;font-size:4rem;">#{{situation}}</h2>
+            <div class="items-container"
+                style=" displaly:flex; flex-wrap:no-wrap; flex-direction: row; width: 100%; min-width: 500px; ">
+                <div class="row" style="justify-content: flex-start;">
+                    {% for snack_result5 in snacks_result5 %} 
+                    <div class=items style="text-align: center; margin-right: 1rem; margin-top:1rem;">
+                        <img src="{{snack_result5.image}}"
+                            class="rounded float" alt="...">
+                        <br>
+                        <p4>{{snack_result5.name}}</p4>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        <div class="buttons" style="display:flex; justify-content: center; align-items:center; margin-top: 2rem;">
+            <a href="{% url 'subscribe' %}"><button type="button" class="btn btn-primary btn-lg"
+                    style="margin: 2rem;border-color:#877669;background: #877669;font-family: 'GmarketSansBold';
+                    font-weight: normal;">구독하러 가기</button></a>
+            <a href="https://smartstore.naver.com/dithings07"><button type="button" class="btn btn-primary btn-lg"
+                    style="margin: 2rem;background: #877669;font-family: 'GmarketSansBold';
+                    font-weight: normal;border-color:#877669;">구매하러 가기</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

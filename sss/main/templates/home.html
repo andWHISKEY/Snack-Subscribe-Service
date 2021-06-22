@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+
+<link href="{% static 'main/css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+{% if error1736 %}
+<script>
+  alert('이미 사용하고 있는 아이디입니다!');
+  history.back();
+</script>
+{% endif %}
+{% if error0704 %}
+<script>
+  alert('아이디나 비번이 맞지 않습니다!');
+  history.back();
+</script>
+{% endif %}
+{% if error1219 %}
+<script>
+  alert('비밀번호와 확인용비밀번호가 일치하지 않습니다!');
+  history.back();
+</script>
+{% endif %}
+
+<header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="{% static 'main/lotte.mp4' %}" type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white" style="margin-top:18%;">
+        <h1 class="display-3" style="font-family:'GmarketSansBold';">Lotte제과</h1>
+        <!-- <p class="lead mb-0">Monthly Snack Service</p> -->
+        <div class="buttons" style="margin-top: 10%;">
+          <a href="#hr_line2" class="btn btn-primary btn-xl mt-5"
+          style="background-color: transparent;
+          border-color: #ffffff;
+          border-width: 2px;
+          margin-left: 20px;
+          margin-right: 20px;
+          width: 17%;
+          font-size: 17px;
+          padding-top: 14px;
+          padding-bottom: 14px;">과자추천</a>
+         
+          <a href="#hr_line" class="btn btn-primary btn-xl mt-5"
+          style="background-color: transparent;
+          border-color: #ffffff;
+          border-width: 2px;
+          margin-left: 20px;
+          margin-right: 20px;
+          width: 17%;
+          padding-top: 14px;
+          padding-bottom: 14px;
+          font-size: 17px;
+           ">구독하기</a>
+          <!-- <a href="#subscribe" class="btn-rectangular">구독하기</a> -->
+          <!-- <a href="{% url 'subscribe' %}"">link</a> -->
+          <a href="https://smartstore.naver.com/dithings07" class="btn btn-primary btn-xl mt-5"
+          style="background-color: transparent;
+          border-color: #ffffff;
+          border-width: 2px;
+          margin-left: 20px;
+          margin-right: 20px;
+          width: 17%;
+          padding-top: 14px;
+          padding-bottom: 14px;
+          font-size: 17px;">쇼핑하기</a>
+          
+        </div>
+    </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<div id="hr_line2"></div>
+<section id="recommend">
+  <div class="container" style="margin-top: 15rem;margin-bottom: 13rem; display: flex;">
+    <div class="col-lg-6 order-lg-1" style="text-align: left; order :-1;">
+      <div class="p-5" style="height: 390px;">
+        <h2 class="display-4"  style="font-family: 'SDGothic';
+          font-weight: bolder;
+          font-style: normal;">당신을 위한<br>과자 추천</h2>
+        <p>자신의 취향에 맞는 과자를 찾아보세요.</p>
+        <hr color="#877669" style="width: 360px; height: 10px; margin-left: 0;">
+        <p>롯데제과가 추천해드릴게요!</p>
+        <a href="{% url 'recommend' %}"><button style="text-align: center;
+          width: 120px;
+          height: 45px; 
+          background: #877669;
+          border-radius: 8px;
+          border-width: 0px;
+          color: white">분석하기</button></a>
+      </div>
+    </div>
+    <div class="container" style="order:2;">
+      <img src="../static/main/img/picture1.png" style="max-width: 600px; height: 390px; text-align: right; margin-left: 0;">
+    </div>
+  </div>
+</section>
+<div id="hr_line"></div>
+<section id="subscribe">
+  <div class="container"  style="margin-bottom: 8rem; display: flex; margin-top: 24rem; margin-bottom:24rem; justify-content: center;">
+    <div class="container" style="order: -1; height: 390px; justify-content: center;
+    align-items: center; display: flex; ">
+      <img class="container" src="../static/main/img/gwajabox.png" style="max-width: 100%; height: 320px;  ">
+    </div>
+    <div class="container" style="order: 2;">
+      <div class="row align-items-center" style="text-align: right; justify-content: right;">
+        <!-- <div class="col-lg-6" style="justify-content: right;"> -->
+          <div class="p-5" style="text-align: right; height: 390px; width: 570px; margin-left: 36%;" >
+            <h2 class="display-4" style="font-family: 'SDGothic';font-weight: bolder; font-style: normal;">월간 과자</h2>
+            <p>지금 구독하고 롯데제과의 다양한 과자를 경험하세요.</p>
+            <hr color="#877669" style="height: 10px; width: 380px; margin-right: 0;">
+            <p>미공개 신상 과자가 포함되어 있어요!</p>
+            <a href="{% url 'subscribe' %}">
+              <button style="text-align: center;
+              width: 120px;
+              height: 45px; 
+              background: #877669;
+              border-radius: 8px;
+              border-width: 0px;
+              color: white">구독하기</button></a>
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<header class="masthead text-center text-white" style="height: 90%;">
+  <div class="masthead-content">
+    <div class="container">
+      <h1 class="masthead-heading mb-0" id="m-heading" style="width: 1200px;">더 많은 롯데제과 제품이 궁금하다면?</h1>
+      <h2 class="masthead-subheading mb-0" id="m-subheading">롯데제과 공식홈페이지를 통해<br>보다 편리하게 롯데제과 제품을 만나보세요.</h2>
+      <a href="https://www.lotteconf.co.kr" class="btn btn-primary btn-xl rounded-pill mt-5">See More</a>
+    </div>
+  </div>
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+</header>
+
+
+{% endblock %}

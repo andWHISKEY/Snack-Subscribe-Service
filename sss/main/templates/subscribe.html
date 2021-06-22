@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<style>
+  @font-face {
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+    font-family: "GmarketSansBold";
+    font-weight: normal;
+    font-style: normal;
+  }
+  .selectpack {
+    display: flex;
+    justify-content: center;
+    top: 120px;
+  }
+
+  .buttonspace {
+    top: 530px;
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+  }
+
+  
+  .wrapper {
+    max-height: 70%;
+  }
+
+  #img1 {
+    margin-right: 2rem;
+  }
+
+  #img2 {
+    margin-left: 2rem;
+  }
+</style>
+<div class="wrap">
+  <section>
+    <div class="container">
+      <h2 class="display-4" style="font-family:'GmarketSansBold';text-align: center;">원하는 패키지를 선택해주세요 </h2>
+      <h4 style="font-family:'GmarketSansBold';text-align: center;">매달 당신의 문앞에서 만나요</h4>
+      <div class="container">
+        <div class="selectpack">
+          <img onclick="clickimage1()" src="{% static 'main/img/maniapackorigin.png' %}" alt=""
+            style="width: 330px; height: 356px; z-index: 3; " id="img1">
+          <img onclick="clickimage2()" src="{% static 'main/img/sopackorigin.png' %}" alt=""
+            style="width: 330px; height: 356px; z-index: 3; " id="img2">
+
+          <script>
+            function clickimage1() {
+              document.getElementById("img1").src = "{% static 'main/img/maniapackcheck.png' %}";
+              document.getElementById("img2").src = "{% static 'main/img/sopackorigin.png' %}";
+            }
+          </script>
+          <script>
+            function clickimage2() {
+              document.getElementById("img2").src = "{% static 'main/img/sopackcheck.png' %}";
+              document.getElementById("img1").src = "{% static 'main/img/maniapackorigin.png' %}";
+            }
+          </script>
+        </div>
+        {% csrf_token%}
+        {% if request.user.is_authenticated %}
+        <div class="buttonspace">
+          <a href="{% url 'payment' %}"><button style="text-align: center;
+            width: 140px;
+            height: 48px; 
+            background: #DA291C;
+            border-radius: 8px;
+            border-width: 0px;
+           
+            color: white">구독하기</button></a>
+        </div>
+        {% endif %}
+        {% if not request.user.is_authenticated %}
+        <div class="buttonspace">
+          <a href="{% url 'login' %}"><button onclick="alert('로그인이 필요한 서비스 입니다.');" style="text-align: center;
+            width: 140px;
+            height: 48px; 
+            background: #DA291C;
+            border-radius: 8px;
+            border-width: 0px;
+            font-family:'GmarketSansBold';
+            
+            color: white">구독하기</button></a>
+        </div>
+        
+        {% endif %}
+      </div>
+  </section>
+
+  <section>
+    <div class="container">
+        <h2 class="display-4" style="font-family:'GmarketSansBold';text-align: center;">월간 과자 구독시, 주어지는 할인혜택</h2>
+        <img class="test" src="{% static 'main/image/subscribe_detail.svg' %}" alt=""
+          style="width: 1100px; height: 600px; z-index: 3; ">
+    </div>
+  </section>
+</div>
+
+{% endblock %}

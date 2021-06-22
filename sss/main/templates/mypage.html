@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link href="{% static 'main/css/payment.css' %}" rel="stylesheet">
+<link href="{% static 'main/css/mypage.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="wrap">
+    <section>
+        <div class="container">
+            <div class="p-5">
+                <h2 class="display-4" style="font-family:'GmarketSansBold';">MYPAGE</h2>
+                <hr width="100%" color="black">
+                <br><br><br>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-body">
+
+                            <div class="box box-info">
+
+                                <div class="box-body">
+                                    <div class="col-sm-6">
+                                        <div> <img alt="User Pic"
+                                                src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"
+                                                id="profile-image1" class="img-circle img-responsive">
+
+                                            <input id="profile-image-upload" class="hidden" type="file">
+                                            <div style="color:#999;">click here to change profile image</div>
+                                        </div>
+                                        <br>
+                                        <!-- /input-group -->
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h4 style="color:#00b1b1; font-family:'GmarketSansBold';">김현우</h4></span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr style="margin:5px 0 5px 0;">
+
+                                    <div style="font-family:'GmarketSansBold';">
+                                        <div class="col-sm-5 col-xs-6 tital ">결제정보</div>
+                                        <div class="col-sm-7 col-xs-6 ">19800원 정기 결제</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+
+                                        <div class="col-sm-5 col-xs-6 tital ">회원정보</div>
+                                        <div class="col-sm-7"> id : krkrk***kek@naver.com</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+
+                                        <div class="col-sm-5 col-xs-6 tital ">구독상세정보</div>
+                                        <div class="col-sm-7"> 3개월 결제</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+
+                                        <div class="col-sm-5 col-xs-6 tital ">전화번호</div>
+                                        <div class="col-sm-7">010-XXXX-XXXX</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+
+                                    </div>
+
+                                </div>
+                                <script>
+                                    $(function () {
+                                        $('#profile-image1').on('click', function () {
+                                            $('#profile-image-upload').click();
+                                        });
+                                    });       
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+    </section>
+</div>
+{% endblock %}

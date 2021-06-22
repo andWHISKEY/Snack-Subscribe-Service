@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<div class="container">
+    <h1>sign up</h1>
+    {{error}}
+    <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+        user name:
+        <br>
+        <input name="userID" type="text" values="">
+        <br>
+        password:
+        <br>
+        <input name="password1" type="password" values="">
+        <br>
+        confirm password:
+        <br>
+        <input name="password2" type="password" values="">
+        <br><br>
+        <input type="submit" class="btn btn-success" value = "sign up">
+    </form>
+</div>
+
+</body>
+
+</html>

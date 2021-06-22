@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Noto_B';
+    src: url('../fonts/NotoSansCJKkr-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.subscribe {
+    position: absolute;
+    top: 60%;
+    font-family: 'Noto_B';
+}
+
+.recomm {
+    position: absolute;
+}
+
